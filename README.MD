@@ -9,4 +9,5 @@ Kitpat.io will be the ultimate open-source intelligence (OSINT) platform designe
 
 Kitpat.io will be built on three core principles: ease of use, powerful insights, and utmost privacy. With Kitpat.io, you will be able to effortlessly take control of your digital footprint, ensuring that you are aware of what the world knows about you or anyone else. It's not just a tool; it's a revelation.
 
-[![Watch the video](https://img.youtube.com/vi/J-JqWAlgbJQ/hqdefault.jpg)](https://www.youtube.com/watch?v=J-JqWAlgbJQ)
+https://github.com/kalviumcommunity/S58_Vedant_Capstone_KitPat_OSINT/assets/87130565/e8584c70-6177-4ff8-993d-66768ac243ce
+
