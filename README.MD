@@ -12,4 +12,14 @@ Kitpat.io will be the ultimate open-source intelligence (OSINT) platform designe
 Kitpat.io will be built on three core principles: ease of use, powerful insights, and utmost privacy. With Kitpat.io, you will be able to effortlessly take control of your digital footprint, ensuring that you are aware of what the world knows about you or anyone else. It's not just a tool; it's a revelation.
 
 
+Key Features and Functions of Kitpat.io
+Comprehensive Search Capabilities:
+Find information about anyone online just by entering their email address, name, phone number, or IP address.
+Track the digital footprint of individuals with ease.
+
+Privacy-Focused Access:
+No personal details required to log in or sign up.
+Use the world's first anonymous sign-up method with a unique account number for login.
+
+
 
