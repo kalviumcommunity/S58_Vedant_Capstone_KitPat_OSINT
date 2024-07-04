@@ -13,6 +13,7 @@ Kitpat.io will be built on three core principles: ease of use, powerful insights
 
 
 Key Features and Functions of Kitpat.io
+
 Comprehensive Search Capabilities:
 Find information about anyone online just by entering their email address, name, phone number, or IP address.
 Track the digital footprint of individuals with ease.
