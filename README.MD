@@ -20,7 +20,7 @@ Track the digital footprint of individuals with ease.
 
 Privacy-Focused Access:
 No personal details required to log in or sign up.
-Use the world's first anonymous sign-up method with a unique account number for login.
+Use the most anonymous sign-up method with a unique account number for login.
 
 ![Screenshot 2024-07-03 125629](https://github.com/kalviumcommunity/S58_Vedant_Capstone_KitPat_OSINT/assets/87130565/36d35a5b-37cc-4cd9-9dd0-2ea55f3519d6)
 
