@@ -1,4 +1,4 @@
-KitPat.io
+KitPat.i
 
 OSINT Platform (Open Source Intelligence)
 
