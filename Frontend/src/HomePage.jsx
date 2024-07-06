@@ -15,8 +15,8 @@ export default function HomePage() {
     <div id='HomePage'>
       <nav id='Navbar'>
         <div id='NavOPitons'>
-          <div>Home</div>
-          <div>Legal</div>
+          <div  onClick={()=>{  navigate("/");}}>Home</div>
+          <div  onClick={()=>{  navigate("/legal");}}>Legal</div>
         </div>
       </nav>
 
@@ -51,7 +51,7 @@ export default function HomePage() {
   </div>
 </div>
 <button id='ButtonInHome'>Get Started</button>
-<div id='MainTextInHome'>
+<div title='?' id='MainTextInHome'>
   <p>An OSINT Tool By </p>
   <img src="rabbit.png" alt="" />
 </div>
