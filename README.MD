@@ -54,9 +54,11 @@ Set up the project repository on GitHub.
 Define project requirements, architecture, and feature specifications.
 Draft a README file outlining available features and project details.
 
-Day 2: Frontend Development - UI/UX Design
-Initialize the React.js frontend application.
-Implement frontend structure and layout using React components.
+Day 2: 
+<label>
+	<input type="checkbox" name="myCheckbox" checked>
+	Added HomePage
+</label>
 
 
 Conclusion
