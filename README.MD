@@ -1,6 +1,6 @@
 KitPat.io
 
-OSINT Platform (Open Source Intelligence)
+OSINT Platform (Open Source Intelligence
 
 https://github.com/kalviumcommunity/S58_Vedant_Capstone_KitPat_OSINT/assets/87130565/97509af0-4ca6-44e6-a797-d88a89001911
 
