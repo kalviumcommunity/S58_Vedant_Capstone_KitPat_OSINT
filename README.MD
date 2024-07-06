@@ -12,33 +12,42 @@ Kitpat.io will be the ultimate open-source intelligence (OSINT) platform designe
 Kitpat.io will be built on three core principles: ease of use, powerful insights, and utmost privacy. With Kitpat.io, you will be able to effortlessly take control of your digital footprint, ensuring that you are aware of what the world knows about you or anyone else. It's not just a tool; it's a revelation.
 
 
+
+
 Key Features and Functions of Kitpat.io
 
 Comprehensive Search Capabilities:
+
 Find information about anyone online just by entering their email address, name, phone number, or IP address.
 Track the digital footprint of individuals with ease.
 
 Privacy-Focused Access:
+
 No personal details required to log in or sign up.
 Use the most anonymous sign-up method with a unique account number for login.
 
 ![Screenshot 2024-07-03 125629](https://github.com/kalviumcommunity/S58_Vedant_Capstone_KitPat_OSINT/assets/87130565/36d35a5b-37cc-4cd9-9dd0-2ea55f3519d6)
 
 Pro-Privacy Measures:
+
 Top up your Kitpat balance using cryptocurrency, ensuring your transactions remain private and untraceable.
 Kitpat.io is dedicated to privacy and does not store any logs, allowing you to search whatever you want peacefully and securely.
 
 User-Friendly Interface:
+
 Easy-to-use platform designed for quick and efficient searches.
 Intuitive design for seamless navigation and user experience.
 
 Advanced Security:
+
 Built with state-of-the-art security measures to protect user data and privacy.
 Regular updates and maintenance to ensure optimal performance and safety.
 Kitpat.io is committed to providing a powerful and private search experience, empowering users to uncover the unseen while maintaining their anonymity and security.
 
 Additional Features (Future Integrations)
+
 This feature will help ensure your data remains secure online by regularly contacting companies to remove your information from their databases.
+
 
 
 Tech-Stack(Tentative)
@@ -46,6 +55,8 @@ Frontend: React.js, HTML, CSS Frameworks (TailwindCSS, DaisyUI, ChakraUI)
 Backend: Node.js, Express.js
 Database: MongoDB
 Authentication: JWT (JSON Web Tokens)
+
+
 
 Day-by-Day Plan (Tentative)
 
@@ -55,10 +66,7 @@ Define project requirements, architecture, and feature specifications.
 Draft a README file outlining available features and project details.
 
 Day 2: 
-<label>
-	<input type="checkbox" name="myCheckbox" checked>
-	Added HomePage
-</label>
+✅ Added HomePage
 
 
 Conclusion
@@ -66,6 +74,5 @@ Kitpat.io stands at the forefront of open-source intelligence platforms, offerin
 Our commitment to user security is evident in our advanced security features and plans to integrate even more privacy tools in the future. By allowing users to log in anonymously and top up their balance using cryptocurrency, Kitpat.io makes it nearly impossible for searches to be tracked.
 
 Kitpat.io - An OSINT Tool by Vedant Yaduvanshi (aka Unfair_Rabbit)
-
 
 
