@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+#HomePage{
+    height: 100vh;
+    width: 100%;
+    background-color: #F1DDC9;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#Navbar{
+  height: 60px;
+  width: 100%;
+  background-color: #F12D3F;
+  display: flex;
+  align-items: center;
+}
+
+#NavOPitons{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  right: 27%;
+  color: white;
+  font-size: 18px;
+  margin: auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+#HomePageContent{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#H1inHome{
+  font-size: 130px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 10px;
+  color: #F12D3F;
+}
+
+#H2inHome{
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: lighter;
+  margin: auto;
+  letter-spacing: 4px;
+  color: #F12D3F;
+  margin-top: -20px;
+}
+
+#HomePageQualities{
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  gap: 20px;
+}
+
+.QualityBox{
+  height: 30px;
+  width: 150px;
+  border: 2px solid #F12D3F;
+  border-radius: 100px;
+  display: flex; 
+  flex-direction: row;
+  overflow: hidden;
+}
+.QualityBox div{
+  background-color: #F12D3F;
+  height: 30px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.QualityBox span{
+margin-top: 3px;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: 500;
+margin-left: 4px;
+}
+
+#ButtonInHome{
+  height: 45px;
+  width: 320px;
+  border-radius: 10px;
+  color: white;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  margin-top: 30px;
+  border-color: transparent;
+  background-color: #DF2337;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+
+#ButtonInHome:hover{
+    cursor: pointer;
+    background-color: #ff273d;
+}
+
+#MainTextInHome{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+#MainTextInHome img{
+  height: 30px;
+}
