@@ -50,7 +50,7 @@ export default function HomePage() {
     <span>Private</span>
   </div>
 </div>
-<button id='ButtonInHome'>Get Started</button>
+<button id='ButtonInHome' onClick={()=>{  navigate("/register");}}>Get Started</button>
 <div title='?' id='MainTextInHome'>
   <p>An OSINT Tool By </p>
   <img src="rabbit.png" alt="" />
