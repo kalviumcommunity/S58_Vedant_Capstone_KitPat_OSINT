@@ -50,12 +50,6 @@ This feature will help ensure your data remains secure online by regularly conta
 
 
 
-Tech-Stack(Tentative)
-Frontend: React.js, HTML, CSS Frameworks (TailwindCSS, DaisyUI, ChakraUI)
-Backend: Node.js, Express.js
-Database: MongoDB
-Authentication: JWT (JSON Web Tokens)
-
 
 
 Day-by-Day Plan (Tentative)
