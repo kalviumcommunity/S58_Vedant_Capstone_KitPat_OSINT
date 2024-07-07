@@ -1,0 +1,114 @@
+#RegisterPage{
+    height: 94vh;
+    width: 100%;
+    background-color: #F1DDC9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#RegisterPage h2{
+    font-family: "Kanit", sans-serif;
+    font-weight: bolder;
+    font-size: 60px;
+    letter-spacing: 4px;
+    margin-right: 270px;
+    color: #ED6B77;
+    margin-top: -55px;
+}
+
+#RegisterPage h3{
+    font-family: "Kanit", sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-right: 80px;
+    margin-top: -55px;
+    color: #F12D3F;
+}
+
+
+
+#RegisterBox{
+    height: 450px;
+    width: 500px;
+    background-color:#F12D3F;
+    border-radius: 12px;
+    margin-top: -25px;
+    padding-left: 20px;
+}
+
+
+#RegisterBox h4{
+    color: white;
+    font-family: "Kanit", sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-top: 50px;
+    letter-spacing: 1px;
+}
+
+#Step1Title{
+    color: white;
+    font-family: "Kanit", sans-serif;
+    font-size: 20px;
+    margin-top: -30px;
+}
+
+#buttontoGenrate{
+    height: 35px;
+    width: 200px;
+    margin-top: 10px;
+    border-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#Step2Title{
+    color: rgba(255, 255, 255, 0.89);
+    font-family: "Kanit", sans-serif;
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+#Step3Title{
+    color: rgba(255, 255, 255, 0.781);
+    font-family: "Kanit", sans-serif;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+#Step4Title{
+    color: rgba(255, 255, 255, 0.603);
+    font-family: "Kanit", sans-serif;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+#AlreadyAccount{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid white;
+    width: 260px;
+    height: 30px;
+    font-family: "Kanit", sans-serif;
+    border-radius: 7px;
+    margin-top: 80px;
+}
+
+#alreadyline{
+    width: 200px;
+    background-color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+#alreadybutton{
+    padding-left: 4px;
+    color: white;
+    cursor: pointer;
+}
