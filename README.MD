@@ -67,6 +67,7 @@ Draft a README file outlining available features and project details.
 
 Day 2: 
 ✅ Added HomePage
+✅ Added LegalPage
 
 
 Conclusion
