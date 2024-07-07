@@ -24,7 +24,7 @@ export default function Register() {
         <div id='Step4Title'>· LogIn to your account.</div>
         <div id='AlreadyAccount'>
            <div id='alreadyline'>Already have an Account ? </div>
-           <div id='alreadybutton'>Login</div>
+           <div id='alreadybutton'  onClick={()=>{  navigate("/login");}}>Login</div>
         </div>
        </div>
     </div>
