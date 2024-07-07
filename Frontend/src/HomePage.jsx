@@ -55,6 +55,9 @@ export default function HomePage() {
   <p>An OSINT Tool By </p>
   <img src="rabbit.png" alt="" />
 </div>
+<p id='KitPatInfo'>Kitpat.io is an innovative platform that leverages open-source intelligence to provide users with comprehensive insights into their digital footprint. Whether it's an email address, phone number, IP address, or even a name, Kitpat.io can swiftly and efficiently search through breached databases worldwide to uncover what information has been exposed.</p>
+<b>Read More</b>
+
 </div>
 
     </div>
