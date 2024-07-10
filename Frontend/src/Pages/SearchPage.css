@@ -1,0 +1,145 @@
+#navbarinSearch{
+    background-color: #F12D3F;
+    height: 70px;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#kitpattitleinNAv{
+    font-family: "Kanit", sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
+    letter-spacing: 4px;
+    color: white;
+    margin-right: 330px;
+}
+
+#TokenInNAv{
+    height: 40px;
+    width: 150px;
+    background-color: white;
+    border-radius: 7px;
+}
+
+#ProfileINdiv{
+    height: 40px;
+    width: 60px;
+    background-color: white;
+    margin-left: 20px;
+    border-radius: 7px;
+}
+
+
+
+#SearchPage{
+    height: 100vh;
+    width: 100%;
+    background-color: #F1DDC9;
+    display: flex;
+    justify-content: center;
+}
+#SearchPAgeBoss{
+    background-color: #ffffff3d;
+    height: 89vh;
+    width: 80vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    border-radius: 5px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+#SearchUsingText{
+    height: 60px;
+    width: 200px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    gap: 2px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+
+#arrowdown{
+    margin-top: 3px;
+}
+
+#SearchUSingBoxes{
+    height: 40px;
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    gap: 29px;
+}
+
+.searchUSingBox{
+    background-color: white;
+    height: 40px;
+    width: 170px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+#searchboxandbutton{
+    height: 60px;
+    width: 100%;
+    /* border: 1px solid red; */
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+#searchboxOfSearchPAge{
+    height: 60px;
+    width: 81%;
+    background-color: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: centers;
+}
+#searchboxOfSearchPAge input{
+    height: 100%;
+    width: 600px;
+    border-color: transparent;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 0 10px;
+    outline: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#searchboxOfSearchPAge input:focus{
+    border: none;
+    outline: none;
+}
+
+#MAinSearchbutton{
+    height: 100%;
+    width: 15%;
+    margin-left: 4%;
+    background-color: #F12D3F;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+#REsultBOX{
+    background-color: white;
+    height: 100%;
+    margin-top: 30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}

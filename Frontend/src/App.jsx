@@ -4,6 +4,7 @@ import HomePage from "./HomePage";
 import LegalPage from "./LegalPage";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
+import SearchPage from "./Pages/SearchPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/legal" element={<LegalPage />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/search" element={<SearchPage />} />
       </Routes>
     </>
   );
