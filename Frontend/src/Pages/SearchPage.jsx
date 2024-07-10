@@ -9,6 +9,8 @@ import { TbWorldWww } from "react-icons/tb";
 import { BiRename } from "react-icons/bi";
 import { BiSolidCoinStack } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
+import { IoIosInformationCircle } from "react-icons/io";
+
 
 
 
@@ -125,7 +127,15 @@ export default function SearchPage() {
             </div>
           </div>
           <div id="REsultBOX">
-
+            <IconContext.Provider
+              value={{
+                className: "global-class-name",
+                size: "85",
+              }}
+            >
+              <IoIosInformationCircle />
+            </IconContext.Provider>
+            <h3>Search something to see results here.</h3>
           </div>
         </div>
       </div>
