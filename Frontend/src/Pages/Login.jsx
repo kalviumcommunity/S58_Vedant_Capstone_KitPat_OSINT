@@ -3,29 +3,13 @@ import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import { FaRightFromBracket } from "react-icons/fa6";
 import { IconContext } from "react-icons/lib";
+import Navbar from "../Components/Navbar";
 
 export default function Login() {
   const navigate = useNavigate();
   return (
     <>
-      <nav id="Navbar">
-        <div id="NavOPitons">
-          <div
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Home
-          </div>
-          <div
-            onClick={() => {
-              navigate("/legal");
-            }}
-          >
-            Legal
-          </div>
-        </div>
-      </nav>
+    <Navbar/>
       <div id="LoginPage">
         <h2>Log In</h2>
         <h3>Get Back In Researcher</h3>

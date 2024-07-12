@@ -1,17 +1,13 @@
 import React from 'react'
 import "./Register.css";
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../Components/Navbar';
 
 export default function Register() {
     const navigate = useNavigate();
   return (
     <>
-          <nav id='Navbar'>
-        <div id='NavOPitons'>
-          <div  onClick={()=>{  navigate("/");}}>Home</div>
-          <div  onClick={()=>{  navigate("/legal");}}>Legal</div>
-        </div>
-      </nav>
+    <Navbar/>
     <div id='RegisterPage'>
         <h2>Sign Up</h2>
         <h3>Powerful Stuff few clicks away</h3>

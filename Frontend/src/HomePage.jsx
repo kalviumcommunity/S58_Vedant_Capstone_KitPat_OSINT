@@ -6,6 +6,7 @@ import { IoIosHappy } from "react-icons/io";
 import { IconContext } from 'react-icons/lib';
 import { FaBoltLightning } from "react-icons/fa6";
 import { SiGnuprivacyguard } from "react-icons/si";
+import Navbar from './Components/Navbar';
 
 
 
@@ -13,13 +14,7 @@ export default function HomePage() {
   const navigate = useNavigate();
   return (
     <div id='HomePage'>
-      <nav id='Navbar'>
-        <div id='NavOPitons'>
-          <div  onClick={()=>{  navigate("/");}}>Home</div>
-          <div  onClick={()=>{  navigate("/legal");}}>Legal</div>
-        </div>
-      </nav>
-
+    <Navbar/>
 
 <div id='HomePageContent'>
 <div id='H1inHome'>KITPAT</div>
