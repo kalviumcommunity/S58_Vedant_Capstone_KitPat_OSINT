@@ -30,12 +30,13 @@
 
 
 #RegisterBox{
-    height: 450px;
+    height: 470px;
     width: 500px;
     background-color:#F12D3F;
     border-radius: 12px;
     margin-top: -25px;
     padding-left: 20px;
+    position: relative;
 }
 
 
@@ -72,12 +73,57 @@
     margin-top: 20px;
 }
 
+#RegistrationNumberBoxConfirms{
+    height: 140px;
+    width: 80%;
+    border-left: 6px solid white;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-left: 3px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+#AccountNumberandcopy{
+    height: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    gap: 10px;
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 5px;
+
+}
+
+
+#ActuallId{
+    padding: 3px 5px;
+    background-color: #fcfcfc;
+    border-radius: 3px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+#RegistrationNumberBoxConfirms span{
+    margin-left: 10px;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
 #Step3Title{
     color: rgba(255, 255, 255, 0.781);
     font-family: "Kanit", sans-serif;
     font-size: 14px;
     margin-top: 20px;
 }
+
 
 #Step4Title{
     color: rgba(255, 255, 255, 0.603);
@@ -95,7 +141,9 @@
     height: 30px;
     font-family: "Kanit", sans-serif;
     border-radius: 7px;
-    margin-top: 80px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
 }
 
 #alreadyline{
