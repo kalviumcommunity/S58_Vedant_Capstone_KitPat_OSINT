@@ -64,6 +64,7 @@ Day 2:
 ✅ Added LegalPage
 ✅ Added SignUp Page
 ✅ Added LogIn Page
+✅ Added Search Page
 
 Conclusion
 Kitpat.io stands at the forefront of open-source intelligence platforms, offering a powerful and private solution for uncovering personal information online. With its comprehensive search capabilities, privacy-focused access, and pro-privacy measures, Kitpat.io ensures that users can take control of their digital footprint without compromising their anonymity.
