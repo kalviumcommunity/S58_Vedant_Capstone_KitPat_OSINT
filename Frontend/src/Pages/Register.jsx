@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Register.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import { ColorRing } from "react-loader-spinner";
 import { BiSolidCopy } from "react-icons/bi";
 import axios from 'axios';
+import Cookies from "js-cookie";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -14,34 +15,49 @@ export default function Register() {
   const [Loading, setOnLoading] = useState(false);
 
   const GenrateAccountNumber = async()=>{
-    try {
-      setOnLoading(true);
-      const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/genrate`);
-      console.log(data)
-      setAccountNum(data.accountId)
-      setStep(1);
-      setOnLoading(false)
-    } catch (error) {   
-      setError(error.response.data.message)
+    if (!Loading) {
+      try {
+        setOnLoading(true);
+        const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/genrate`);
+        setAccountNum(data.accountId)
+        setStep(1);
+        setOnLoading(false)
+      } catch (error) {   
+        setError(error.response.data.message)
+        setOnLoading(false)
+      }
     }
+
 }
 
 const RegisterYourAccount = async()=>{
-  setOnLoading(true);
-  if (AccountNum.length === 25) {
-    try {
-      const {data} = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`,
-        {
-          AccountNum,
-      });
-      console.log(data)
-      setStep(3);
-      setOnLoading(false)
-    } catch (error) {   
-      setError(error.response.data.message)
+  if (!Loading) {
+    setOnLoading(true);
+    if (AccountNum.length === 25) {
+      try {
+        const {data} = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`,
+          {
+            AccountNum,
+        });
+        console.log(data)
+        setStep(3);
+        setOnLoading(false)
+      } catch (error) {   
+        setError(error.response.data.message)
+        setOnLoading(false)
+      }
     }
   }
 }
+
+
+useEffect(() => {
+  const user = Cookies.get('user')
+  if (user !== undefined) {
+    navigate("/search")
+  }
+}, [])
+
 
 
   return (
@@ -132,7 +148,7 @@ const RegisterYourAccount = async()=>{
                 id="buttontoContinue"
                 onClick={()=>{RegisterYourAccount()}}
               >
-               {!Loading && <div>Generate account number</div>}
+               {!Loading && <div>Continue</div>}
               {Loading && (
                 <ColorRing
                   visible={true}
