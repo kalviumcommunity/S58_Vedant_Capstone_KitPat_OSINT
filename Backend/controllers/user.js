@@ -31,28 +31,34 @@ exports.registerNumber = async (req, res) => {
 };
 
 
+
 exports.register = async (req, res) => {
   try {
-    const accountId = req.body.accountNumber;
-    console.log(accountId)
-
-    const checkAccountId = await User.findOne({ accountId });
+    const accountId = req.body.AccountNum;
+    console.log(accountId);
 
     if (!validateAccountId(accountId)) {
       return res.status(400).json({
-        message: "Invalid Email Address.",
+        message: "Invalid Account.",
       });
-    } else if (checkAccountId) {
+    }
+
+    const checkAccountId = await User.findOne({ accountId });
+
+    if (checkAccountId) {
       return res.status(400).json({
-        message: "Account Id is already in use",
+        message: "Error",
       });
-    }else {
-        const token = 0;
-      const user = await new User({
+    } else {
+      const token = 0;
+      const user = new User({
         accountId,
         token,
-        currentPayment: "null",
-      }).save();
+        currentPayment: "0",
+      });
+
+      await user.save();
+
       res.send({
         accountId: user.accountId,
         token: user.token,
@@ -69,13 +75,12 @@ exports.register = async (req, res) => {
 
 
 
-
   exports.login = async (req, res) => {
     try {
      const accountId = req.body.accountNumber;
      const user = await User.findOne({accountId});
      if(!user){
-      return res.status(400).json({message:"AccountId not registered."});
+      return res.status(400).json({message:"Bad Request"});
      } 
      res.send({
         accountId: user.accountId,
