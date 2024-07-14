@@ -16,10 +16,12 @@ export default function Login() {
 
   
   const Login = async()=>{
+    const accountNumber = accountNumberRef.current.value;
+    console.log(accountNumber.length)
     if (!Loading) {
-      setError("")
+      if (accountNumber.length === 25) {
+        setError("")
       setLoading(true)
-      const accountNumber = accountNumberRef.current.value;
         try {
           const {data} = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/login`,
             {
@@ -34,8 +36,20 @@ export default function Login() {
           setLoading(false)
           setError(error.response.data.message)
         }
+        
+      }
+      setError("Bad Request")
+    
     }
     }
+
+
+    useEffect(() => {
+      const user = Cookies.get('user')
+      if (user !== undefined) {
+        navigate("/search")
+      }
+    }, [])
 
   return (
     <>
