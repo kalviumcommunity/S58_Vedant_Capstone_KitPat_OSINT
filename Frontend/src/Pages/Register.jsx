@@ -4,15 +4,46 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import { ColorRing } from "react-loader-spinner";
 import { BiSolidCopy } from "react-icons/bi";
+import axios from 'axios';
 
 export default function Register() {
   const navigate = useNavigate();
+  const [AccountNum, setAccountNum] = useState("");
+  const [error, setError] = useState("");
   const [Step, setStep] = useState(0);
   const [Loading, setOnLoading] = useState(false);
-  const onLoinClick = () => {
-    setOnLoading(true);
-    setStep(1);
-  };
+
+  const GenrateAccountNumber = async()=>{
+    try {
+      setOnLoading(true);
+      const {data} = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/genrate`);
+      console.log(data)
+      setAccountNum(data.accountId)
+      setStep(1);
+      setOnLoading(false)
+    } catch (error) {   
+      setError(error.response.data.message)
+    }
+}
+
+const RegisterYourAccount = async()=>{
+  setOnLoading(true);
+  if (AccountNum.length === 25) {
+    try {
+      const {data} = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`,
+        {
+          AccountNum,
+      });
+      console.log(data)
+      setStep(3);
+      setOnLoading(false)
+    } catch (error) {   
+      setError(error.response.data.message)
+    }
+  }
+}
+
+
   return (
     <>
       <Navbar />
@@ -28,7 +59,7 @@ export default function Register() {
             · Start by generating a random account number.
           </div>
           {Step === 0 && (
-            <button id="buttontoGenrate" onClick={onLoinClick}>
+            <button id="buttontoGenrate" onClick={GenrateAccountNumber}>
               {!Loading && <div>Generate account number</div>}
               {Loading && (
                 <ColorRing
@@ -58,7 +89,7 @@ export default function Register() {
           {Step === 1 && (
             <div id="RegistrationNumberBoxConfirms">
               <div id="AccountNumberandcopy">
-                <div id="ActuallId">hgdftwirpfjdg263920fjey36</div>
+                <div id="ActuallId">{AccountNum}</div>
                 <div style={{ color: "white", cursor: "pointer" }}>
                   <BiSolidCopy />
                 </div>
@@ -99,11 +130,20 @@ export default function Register() {
               </div>
               <button
                 id="buttontoContinue"
-                onClick={() => {
-                  setStep(3);
-                }}
+                onClick={()=>{RegisterYourAccount()}}
               >
-                Continue
+               {!Loading && <div>Generate account number</div>}
+              {Loading && (
+                <ColorRing
+                  visible={true}
+                  height="30"
+                  width="30"
+                  ariaLabel="color-ring-loading"
+                  wrapperStyle={{}}
+                  wrapperClass="color-ring-wrapper"
+                  colors={["#000000", "", "#080808", "#1a1919", "#2e2d2d"]}
+                />
+              )}
               </button>
             </>
           )}
@@ -124,18 +164,25 @@ export default function Register() {
                 Congratulations 🥳, your account is now active.{" "}
               </div>
               <div id="AccountNumberandcopy">
-                <div id="ActuallId">hgdftwirpfjdg263920fjey36</div>
+                <div id="ActuallId">{AccountNum}</div>
                 <div style={{ color: "white", cursor: "pointer" }}>
                   <BiSolidCopy />
                 </div>
               </div>
               <div id="WelcometoKitpat">
                 Welcome to Kitpat. You can now{" "}
-                <b style={{ textDecoration: "underline", cursor: "pointer" }}>
+                <b
+                  style={{ textDecoration: "underline", cursor: "pointer" }}
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                >
                   Login here
                 </b>
               </div>
-              <div id="WelcometoKitpat" style={{fontWeight:"lighter"}}>Note: Dont Loose your Account Number.</div>
+              <div id="WelcometoKitpat" style={{ fontWeight: "lighter" }}>
+                Note: Dont Loose your Account Number.
+              </div>
             </>
           )}
 

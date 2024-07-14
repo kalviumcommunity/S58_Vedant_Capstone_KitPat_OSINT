@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const userSchema = mongoose.Schema({
     accountId: {
         type: String,
-        required: [true, "accountid is required"],
+        required: [true, "accountId is required"],
         trim: true,
-        text: true
+        unique: true,  // Ensure the accountId is unique
     },
     token: {
         type: Number,
@@ -13,9 +13,8 @@ const userSchema = mongoose.Schema({
     currentPayment: {
         type: String,
     },
-
 }, {
-    timestamps:true,
+    timestamps: true,
 });
 
 
