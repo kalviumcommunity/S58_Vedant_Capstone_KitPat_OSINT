@@ -3,23 +3,90 @@ import "./SearchPage.css";
 import { IoCaretDownOutline } from "react-icons/io5";
 import { IconContext } from "react-icons/lib";
 import { FaSearch } from "react-icons/fa";
-import { IoIosInformationCircle } from "react-icons/io";
 import Navbar2 from "../Components/Navbar2";
 import SearhUsingBoxes from "../Components/SearhUsingBoxes";
-
-
-
+import { BiSolidCoinStack } from "react-icons/bi";
+import ResultBox from "../Components/ResultBox";
+import Hints from "../Components/Hints";
 
 export default function SearchPage() {
+  const [SearchUsing, setSearchUsing] = useState(0);
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false); 
 
-  const [SearchUsing, setSearchUsing] = useState(0)
 
 
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  
+  const handleSearchClick = async () => {
+    if (loading === false) {
+        setLoading(true)
+        setError("")
+      if (SearchUsing === 0) {
+         if (validateEmail(email)) {
+          try {
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/getmail`, { email });
+            setresData(response.data);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+            setLoading(false)
+            setError("Bad Request")
+          } finally {
+            setLoading(false);
+            setError("")
+          }  
+         }
+         setError("Invalid Email format")
+      }
+      
+    }
+
+    if (validateEmail(email)) {
+      setError('');
+      setLoading(true); // Set loading state to true
+      try {
+        console.log(`${import.meta.env.VITE_BACKEND_URL}/getmail`)
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/getmail`, { email });
+        setresData(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false); // Reset loading state
+      }
+    } else {
+      setError('Invalid email format');
+    }
+  };
+
+
+  
   return (
     <>
-    <Navbar2/>
+      <Navbar2 />
       <div id="SearchPage">
         <div id="SearchPAgeBoss">
+          <button id="BuyCreditsSearchPage">
+            Buy{" "}
+            <IconContext.Provider
+              value={{
+                color: "white",
+                className: "global-class-name",
+                size: "20",
+              }}
+            >
+              <BiSolidCoinStack  />
+            </IconContext.Provider>
+          </button>
           <div id="SearchUsingText">
             <h4>Search Using</h4>
             <IconContext.Provider
@@ -33,66 +100,59 @@ export default function SearchPage() {
             </IconContext.Provider>
           </div>
 
-          <SearhUsingBoxes SearchUsing={SearchUsing} setSearchUsing={setSearchUsing}/>
+          <SearhUsingBoxes
+            SearchUsing={SearchUsing}
+            setSearchUsing={setSearchUsing}
+          />
 
           <div id="searchboxandbutton">
             <div id="searchboxOfSearchPAge">
-              <input type="text" placeholder="Enter a valid mail address" />
+             
+              {
+                SearchUsing === 0 &&
+                <input type="text" placeholder="Enter a valid Mail address"  value={email} onChange={handleEmailChange}/>
+              }
+              {
+                SearchUsing === 1 &&
+                <input type="text" placeholder="Enter a valid Phone Number" />
+              }
+                            {
+                SearchUsing === 2 &&
+                <input type="text" placeholder="Enter a valid IP Address" />
+              }
+                                          {
+                SearchUsing === 3 &&
+                <input type="text" placeholder="Enter a Name" />
+              }
             </div>
-            <div id="MAinSearchbutton">
-            <IconContext.Provider
-              value={{
-                color: "white",
-                className: "global-class-name",
-                size: "25",
-              }}
-            >
-              <FaSearch />
-            </IconContext.Provider>
+            <div  onClick={handleSearchClick}  id="MAinSearchbutton">
+              <IconContext.Provider
+                value={{
+                  color: "white",
+                  className: "global-class-name",
+                  size: "25",
+                }}
+              >
+                <FaSearch />
+              </IconContext.Provider>
             </div>
           </div>
-          <div id="hintforSearches">
-            {
-              SearchUsing === 0 &&
-              <>
-              <h4>Search Example: </h4>
-              <h4> example@gmail.com</h4>
-              </>
-            }
-                        {
-              SearchUsing === 1 &&
-              <>
-              <h4>Search Example: </h4> 
-              <h4> +911234567890 , 1234567890, 911234567890 </h4>
-              <span>Try different formats to get better results. </span>
-              </>
-            }
-                        {
-              SearchUsing === 2 &&
-              <>
-              <h4>Search Example: </h4>
-              <h4> 127.0.0.1</h4>
-              </>
-            }
-                        {
-              SearchUsing === 3 &&
-              <>
-              <h4>Search Example: </h4>
-              <h4> John Smith</h4>
-              </>
-            }
-          </div>
-          <div id="REsultBOX">
+          <div id="CostOfSearch">
+            Cost :  1
             <IconContext.Provider
-              value={{
-                className: "global-class-name",
-                size: "85",
-              }}
-            >
-              <IoIosInformationCircle />
-            </IconContext.Provider>
-            <h3>Search something to see results here.</h3>
+                value={{
+                  color: "red",
+                  className: "global-class-name",
+                  size: "25",
+                }}
+              ><BiSolidCoinStack /> 
+              </IconContext.Provider>
+              &nbsp;per Search
           </div>
+                
+                <Hints SearchUsing={SearchUsing}/>
+
+             <ResultBox/>
         </div>
       </div>
     </>
