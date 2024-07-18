@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SearchPage.css";
 import { IoCaretDownOutline } from "react-icons/io5";
 import { IconContext } from "react-icons/lib";
@@ -8,13 +8,30 @@ import SearhUsingBoxes from "../Components/SearhUsingBoxes";
 import { BiSolidCoinStack } from "react-icons/bi";
 import ResultBox from "../Components/ResultBox";
 import Hints from "../Components/Hints";
+import axios from "axios";
 
 export default function SearchPage() {
   const [SearchUsing, setSearchUsing] = useState(0);
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
+  const [resData, setResData] = useState(null);
 
+
+  useEffect(() => {
+    if (error) {
+      const errorBox = document.getElementById('ErrorShow');
+      errorBox.classList.add('show');
+      setTimeout(() => {
+        errorBox.classList.remove('show');
+        errorBox.classList.add('hide');
+        setTimeout(() => {
+          setError('');
+          errorBox.classList.remove('hide');
+        }, 500); // Match this duration with the transition time
+      }, 3000); // Display duration
+    }
+  }, [error]);
 
 
 
@@ -27,51 +44,37 @@ export default function SearchPage() {
     return re.test(String(email).toLowerCase());
   };
 
-  
   const handleSearchClick = async () => {
     if (loading === false) {
-        setLoading(true)
-        setError("")
+      setLoading(true);
+      setError("");
+
       if (SearchUsing === 0) {
-         if (validateEmail(email)) {
+        if (validateEmail(email)) {
           try {
             const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/getmail`, { email });
-            setresData(response.data);
+            setResData(response.data);
+            console.log(response);
           } catch (error) {
             console.error('Error fetching data:', error);
-            setLoading(false)
-            setError("Bad Request")
+            setError("Bad Request");
           } finally {
             setLoading(false);
-            setError("")
-          }  
-         }
-         setError("Invalid Email format")
+          }
+        } else {
+          setError("Invalid Email format");
+          setLoading(false);
+        }
       }
-      
-    }
-
-    if (validateEmail(email)) {
-      setError('');
-      setLoading(true); // Set loading state to true
-      try {
-        console.log(`${import.meta.env.VITE_BACKEND_URL}/getmail`)
-        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/getmail`, { email });
-        setresData(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        setLoading(false); // Reset loading state
-      }
-    } else {
-      setError('Invalid email format');
+      setLoading(false)
     }
   };
 
-
-  
   return (
     <>
+      <div id="ErrorShow">
+        {error}
+      </div>
       <Navbar2 />
       <div id="SearchPage">
         <div id="SearchPAgeBoss">
@@ -84,7 +87,7 @@ export default function SearchPage() {
                 size: "20",
               }}
             >
-              <BiSolidCoinStack  />
+              <BiSolidCoinStack />
             </IconContext.Provider>
           </button>
           <div id="SearchUsingText">
@@ -107,25 +110,25 @@ export default function SearchPage() {
 
           <div id="searchboxandbutton">
             <div id="searchboxOfSearchPAge">
-             
-              {
-                SearchUsing === 0 &&
-                <input type="text" placeholder="Enter a valid Mail address"  value={email} onChange={handleEmailChange}/>
-              }
-              {
-                SearchUsing === 1 &&
+              {SearchUsing === 0 && (
+                <input
+                  type="text"
+                  placeholder="Enter a valid Mail address"
+                  value={email}
+                  onChange={handleEmailChange}
+                />
+              )}
+              {SearchUsing === 1 && (
                 <input type="text" placeholder="Enter a valid Phone Number" />
-              }
-                            {
-                SearchUsing === 2 &&
+              )}
+              {SearchUsing === 2 && (
                 <input type="text" placeholder="Enter a valid IP Address" />
-              }
-                                          {
-                SearchUsing === 3 &&
+              )}
+              {SearchUsing === 3 && (
                 <input type="text" placeholder="Enter a Name" />
-              }
+              )}
             </div>
-            <div  onClick={handleSearchClick}  id="MAinSearchbutton">
+            <div onClick={handleSearchClick} id="MAinSearchbutton">
               <IconContext.Provider
                 value={{
                   color: "white",
@@ -140,19 +143,20 @@ export default function SearchPage() {
           <div id="CostOfSearch">
             Cost :  1
             <IconContext.Provider
-                value={{
-                  color: "red",
-                  className: "global-class-name",
-                  size: "25",
-                }}
-              ><BiSolidCoinStack /> 
-              </IconContext.Provider>
-              &nbsp;per Search
+              value={{
+                color: "red",
+                className: "global-class-name",
+                size: "25",
+              }}
+            >
+              <BiSolidCoinStack />
+            </IconContext.Provider>
+            &nbsp;per Search
           </div>
-                
-                <Hints SearchUsing={SearchUsing}/>
 
-             <ResultBox/>
+          <Hints SearchUsing={SearchUsing} />
+
+          <ResultBox resData={resData} />
         </div>
       </div>
     </>
