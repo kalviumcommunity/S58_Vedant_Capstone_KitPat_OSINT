@@ -8,6 +8,7 @@ import SearchPage from "./Pages/SearchPage";
 import ProfilePage from "./Pages/ProfilePage";
 import NotLoggedInRoutes from "./function/NotLoggedInRoutes";
 import LoggedInRoutes from "./function/LoggedInRoutes";
+import BuyKitpat from "./Pages/BuyKitpat";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route element={<LoggedInRoutes />}>
         <Route exact path="/search" element={<SearchPage />} />
         <Route exact path="/profile" element={<ProfilePage />} />
+        <Route exact path="/recharge" element={<BuyKitpat />} />
       </Route>
       </Routes>
     </>

@@ -9,7 +9,7 @@ export default function Navbar2() {
   return (
     <nav id="navbarinSearch">
     <div id="kitpattitleinNAv" onClick={()=>{navigate("/search")}}>KITPAT</div>
-    <div id="TokenInNAv">
+    <div id="TokenInNAv" onClick={()=>{navigate("/recharge")}}>
       <div id="tokensforkitpat">
       <IconContext.Provider
           value={{
